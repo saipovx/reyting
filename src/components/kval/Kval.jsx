@@ -15,6 +15,12 @@ import k from '../kval/kval.module.scss'
             <p className={k.kval__title}>
             Повышение квалификации
             </p>
+
+            <p className={k.kval__title}>
+            Повышение квалификации
+            </p>
+
+            
             
             <div className={k.kval}>
                 
