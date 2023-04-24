@@ -8,6 +8,8 @@ import Info from '../info/Info'
 import Choise from '../choise/choise'
 import Swiperr from '../swiper/Swiper'
 import Kval from '../kval/Kval'
+import Novos from '../novos/Novos'
+import Port from '../port/Port'
 
 
 function Home () {
@@ -52,6 +54,10 @@ function Home () {
         <Swiperr />
 
         <Kval />
+
+        <Novos />
+
+        <Port />
 
         </>
 
