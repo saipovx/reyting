@@ -1,7 +1,7 @@
 import o from '../onas/onas.module.scss'
 import h from '../header/header.module.scss'
 
-import onas__item from '../img/onas__item.jpg'
+import onas__item from '../img/onas__item2.jpg'
 
 import { Link } from 'react-router-dom'
 
@@ -26,7 +26,7 @@ function Onas () {
                             <div className={o.line}></div>
 
                             <p className={o.onas__item_id_title}>
-                            Рейтинг — организация, оказывающая услуги по поиску и подбору персонала и предоставляющая услуги по поиску работы и трудоустройству.
+                            Рейтинг — кадровое агенство для соискателей и работодателей.
                             </p>
 
                     </div>
@@ -37,7 +37,7 @@ function Onas () {
 
                         <p className={o.onas__item_id_title}>
 
-                        Также другие сопутствующие услуги, такие как обучение сотрудников с помощью партнера <Link to='/'><span>“Академия”</span></Link>   
+                        Рейтинг — обучение сотрудников и повышение квалификации <Link to='/'><span>( партнер, “Академия Француз”)</span></Link>   
 
                         </p>
 

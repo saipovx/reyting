@@ -44,7 +44,7 @@ function Swiperr () {
 </div>
 
 <Swiper
-slidesPerView={3.2}
+slidesPerView={3.1}
 centeredSlides={true}
 spaceBetween={60}
 className="mySwiper"
