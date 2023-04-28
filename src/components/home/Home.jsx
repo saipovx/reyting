@@ -1,7 +1,10 @@
+import Header from '../header/Header'
+
 import h from '../header/header.module.scss'
 import m from '../home/home.module.scss'
 
 import {Link} from 'react-router-dom'
+
 
 import Onas from '../onas/Onas'
 import Info from '../info/Info'
@@ -12,11 +15,15 @@ import Novos from '../novos/Novos'
 import Port from '../port/Port'
 
 
+
+
 function Home () {
 
     return (
 
         <>
+
+       <Header />
         
         <section className={m.section__home}>
             <div className={h.container}>
@@ -30,7 +37,7 @@ function Home () {
 
                     <div className={m.home__buttons}>
                         
-                        <Link to='/' className={m.home__buttons__link}>
+                        <Link to='/rezume' className={m.home__buttons__link}>
                         Соискателям
                         </Link>
 
@@ -44,6 +51,8 @@ function Home () {
 
             </div>
         </section>
+
+
 
         <Onas />
         

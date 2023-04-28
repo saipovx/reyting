@@ -24,7 +24,7 @@ function Footer () {
     return (
 
         <>
-      <div className={f.section__footer}>
+      <div className={f.section__footer} id='footer'>
         <div className={h.container}>
             
             <div className={f.footer}>

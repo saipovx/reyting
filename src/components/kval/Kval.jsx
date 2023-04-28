@@ -11,7 +11,7 @@ import k from '../kval/kval.module.scss'
 
         <>
         
-      <section className={k.section__kval}>
+      <section className={k.section__kval} id='kval'>
         <div className={h.container}>
 
             <p className={k.kval__title}>

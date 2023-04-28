@@ -11,7 +11,7 @@ import img4 from '../img/novos4.jpg'
 
  function Novos () {
     return (
-      <div className={n.section__novos}>
+      <div className={n.section__novos} id='novos'>
         <div className={h.container}>
 
             <p className={n.novod__title}>

@@ -12,7 +12,7 @@ import port5 from '../img/port5.jpg'
 function Port () {
 
     return (
-      <div className={p.section__port}>
+      <div className={p.section__port} id='port'>
         <div className={h.container}>
             
             <p className={p.port__title}>Наши партнеры</p>

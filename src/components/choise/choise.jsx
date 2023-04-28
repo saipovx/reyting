@@ -8,7 +8,7 @@ function Choise() {
   
         <>
         
-        <section className={c.section__choise}>
+        <section className={c.section__choise} id='сhoise'>
             <div className={h.container}>
                 
                 <div className={c.choise}>

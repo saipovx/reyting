@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 function Onas () {
     return (
 
-        <section className={o.section__onas}>
+        <section className={o.section__onas} id='onas'>
             <div className={h.container}>
 
                 <p className={o.onas__title}>

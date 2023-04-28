@@ -11,7 +11,7 @@ function Info () {
 
         <>
         
-        <section className={i.section__info}>
+        <section className={i.section__info} id='info'>
             <div className={h.container}>
 
 

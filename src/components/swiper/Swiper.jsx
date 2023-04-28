@@ -28,7 +28,7 @@ function Swiperr () {
 
         <>
 
-<section className="section__swiper">
+<section className="section__swiper" id="">
 
 <div className={h.container}>
 

@@ -1,3 +1,5 @@
+import { HashLink } from 'react-router-hash-link';
+
 
 import { useState, useEffect } from 'react'
 
@@ -38,6 +40,13 @@ function Header () {
 
       })
 
+      const scrollWithOffset = (el) => {
+        const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+        const yOffset = -85; 
+        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+    } 
+      
+
 
     return (
 
@@ -53,34 +62,54 @@ function Header () {
 
             <ul className={nav ? [h.nav__ul, h.nav__ul_active].join(' ') : [h.nav__ul] }>
 
-            <p>
-                 <NavLink  to='./' className={h.nav__ul__link} onClick={closeSideBar}>
-                 О нас 
-                 </NavLink>
+            <p  >
+            <HashLink
+                 to="/#onas"
+                 className={h.nav__ul__link} onClick={closeSideBar}
+                 scroll={el => scrollWithOffset(el)}
+                 >
+                    
+                  О нас
+            </HashLink>
             </p>
 
             <p>
-                 <NavLink  to='./' className={h.nav__ul__link}  onClick={closeSideBar}>
-                 Предложения 
-                 </NavLink>
+            <HashLink
+                 to="/#info"
+                 className={h.nav__ul__link} onClick={closeSideBar}
+                 scroll={el => scrollWithOffset(el)}
+                 >
+                    
+                    Предложения 
+            </HashLink>
             </p>
 
             <p>
-                 <NavLink  to='./' className={h.nav__ul__link}  onClick={closeSideBar}>
-                 Обучение 
-                 </NavLink>
+            <HashLink
+                 to="/#kval"
+                 className={h.nav__ul__link} onClick={closeSideBar}
+                 scroll={el => scrollWithOffset(el)}
+                 >
+                    
+                    Обучение 
+            </HashLink>
             </p>
 
             <p>
-                 <NavLink  to='./' className={h.nav__ul__link}  onClick={closeSideBar}>
-                 Новости и статьи 
-                 </NavLink>
+            <HashLink
+                 to="/#novos"
+                 className={h.nav__ul__link} onClick={closeSideBar}
+                 scroll={el => scrollWithOffset(el)}
+                 >
+                    
+                    Новости и статьи 
+            </HashLink>       
             </p>
 
             <p >
-                 <NavLink  to='./' className={h.nav__ul__link}  onClick={closeSideBar}>
+                 <HashLink  scroll={el => scrollWithOffset(el)}  to='/#footer' className={h.nav__ul__link}  onClick={closeSideBar}>
                  Контакты 
-                 </NavLink>
+                 </HashLink>
             </p>
 
             </ul>
@@ -88,9 +117,9 @@ function Header () {
 
             <div className={h.nav__admin}>
                 
-                <button className={h.nav__admin_button}>
+                <Link to="tel:+79999999999" className={h.nav__admin_button}>
                 Обратный звонок
-                </button>
+                </Link>
 
                 <div className={h.nav__admin_user}>
                     
