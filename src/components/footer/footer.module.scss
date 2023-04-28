@@ -1,5 +1,5 @@
 .section__footer{
-    padding: 86px 0px;
+    padding: 70px 0px;
     background-color: #1D1D1D;
 
     @media screen and (max-width: 550px){
@@ -11,17 +11,17 @@
 
         width: 100%;
 
-
-        &__logo{
+        &__logos{
+            width: 100%;
             display: flex;
-            text-align: center;
-            justify-content: center;
-            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
         }
 
         &__info{
             display: flex;
             justify-content: space-between;
+            gap: 40px;
 
             margin-top: 80px;
 
@@ -48,6 +48,7 @@
                     font-size: 30px;
                     line-height: 28px;
                     color: #FFCC2D;  
+                    text-align: left;
                     
                     @media screen and (max-width: 900px){
                         text-align: left;
@@ -192,10 +193,10 @@
 
             &_port{
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 flex-direction: column;
                 flex-wrap: wrap;
-                max-width: 400px;
+                max-width: 900px;
 
                 @media screen and (max-width: 900px){
                     max-width: 700px;
@@ -210,6 +211,7 @@
                     justify-content: space-around;
                     gap: 40px;
                     margin-top: 80px;
+                    width: 100%;
 
                     @media screen and (max-width: 900px){
                         margin-top: 20px;
@@ -220,6 +222,7 @@
                     @media screen and (max-width: 550px){
                         width: 100px;
                      }
+
                     }
                      
 
@@ -286,7 +289,17 @@
                 font-size: 18px;
                 line-height: 28px;
                 color: #D6D6D6;
-                max-width: 310px;
+    
+
+                display: flex;
+                align-items: center;
+                gap: 35px;
+
+                @media screen and (max-width: 900px){
+                    flex-direction: column-reverse;
+                    gap: 10px;
+                    align-items: flex-start;
+                }
              }
     }
 }

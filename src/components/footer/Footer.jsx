@@ -9,7 +9,6 @@ import Logo2 from '../img/logo2.svg'
 import tel from '../img/tel.svg'
 import Mail from '../img/mail.svg'
 import Geol from '../img/bi_geo-alt-fill.svg'
-import vk from '../img/vk.svg'
 
 import img1 from '../img/footer__img1.png'
 import img2 from '../img/footer__img2.png'
@@ -17,6 +16,10 @@ import img3 from '../img/footer__img3.png'
 import img4 from '../img/footer__img4.png'
 import img5 from '../img/footer__img5.png'
 import img6 from '../img/footer__img6.png'
+import img7 from '../img/footer__img7.png'
+import img8 from '../img/footer__img8.png'
+import img9 from '../img/footer__img9.png'
+import img10 from '../img/footer__img10.png'
 
 
 
@@ -28,9 +31,13 @@ function Footer () {
         <div className={h.container}>
             
             <div className={f.footer}>
-                
-                <img src={Logo} alt="logo" className={f.footer__logo} />
 
+                <div className={f.footer__logos}>
+                     <img src={Logo} alt="logo" className={f.footer__logo} />
+                     <img src={Logo2} alt="logo" className={f.footer__logo} />
+                </div>
+                
+               
                 <div className={f.footer__info}>
 
                     <div className={f.footer__info_item}>
@@ -94,10 +101,7 @@ function Footer () {
                         <p className={f.footer__info_item_text}>
                         Развлекательный комплекс “Француз”
                         </p>          
-                          
-                          <Link to=''>
-                        <img src={vk} className={f.footer__info_item_svg} alt="svg" />        
-                          </Link>
+                        
 
 
                     </div>
@@ -111,12 +115,46 @@ function Footer () {
 
                    <div className={f.footer__info_port_imgs}>
 
+                    <Link to=''>
                     <img src={img1} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
                     <img src={img2} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
                     <img src={img3} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
                     <img src={img4} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
                     <img src={img5} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
                     <img src={img6} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
+                    <img src={img7} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
+                    <img src={img8} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
+                    <img src={img9} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
+                    <Link to=''>
+                    <img src={img10} alt="img" className={f.footer__info_port_imgs_img} />
+                    </Link>
+
 
                    </div>
 
@@ -125,9 +163,6 @@ function Footer () {
 
 
                 </div>
-
-                <img src={Logo2} alt="logo" className={f.footer__logo} />
-
 
 
             </div>
@@ -148,14 +183,15 @@ function Footer () {
                     ИНН: 502807103555
                     </p>
 
-                    <p className={f.bottom_center}>
-                    Сделано WeTop digital agency 2023
-                    </p>
 
                     <p className={f.bottom_right}>
-                    Политика конфиденциальности
-                    Не является публичной офертой
-                     ©Все права защищены
+                    <span> Политика конфиденциальности</span>
+                    <span>Не является публичной офертой</span>
+                     <span>©Все права защищены</span>
+                    </p>
+
+                    <p className={f.bottom_center}>
+                    Сделано WeTop digital agency 2023
                     </p>
 
                 </div>

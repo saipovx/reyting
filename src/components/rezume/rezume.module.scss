@@ -320,6 +320,11 @@
                 color: #fff;
                 border: 1px solid #00000000;            
             }
+
+            @media screen and (max-width: 550px ) {
+                font-size: 22px;
+                line-height: 190%;
+           }
                        
         }
     }
