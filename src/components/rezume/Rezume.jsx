@@ -39,6 +39,10 @@ function Rezume() {
 
             </div> 
 
+            <Link to='/' className={m.rezume__exit}>
+            Назад
+            </Link>
+
         </div>
     </div>
 

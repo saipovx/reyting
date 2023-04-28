@@ -9,10 +9,49 @@
     display: flex;
     align-items: center;
 
+    position: relative;
+
+
     & .rezume{
         display: flex;
         flex-direction: column;
         text-align: center;
+
+        &__exit{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            color: #F3F3F3;
+            background: #282828;
+
+            mix-blend-mode: hard-light;
+
+            opacity: 0.5;
+            border-radius: 100px;
+            padding: 0px 60px;
+            text-decoration: none;
+
+            position: absolute;
+            bottom: 80px ;
+            left: 80px;
+
+            transition: all ease .3s;
+
+            &:hover{
+                opacity: 0.7;
+            }
+
+            @media screen and (max-width: 994px ) {
+                bottom: 20px;
+                left: 20px;
+                font-size: 20px;
+            }
+
+
+        }
 
         &__title{
             font-family: 'Montserrat';
@@ -94,6 +133,7 @@
 
     padding: 50px 0px;
     background-color: #fff;
+    
 
 
   & .komp{
@@ -131,7 +171,7 @@
         }
 
         @media screen and (max-width: 550px ) {
-            font-size: 35px;
+            font-size: 30px;
             line-height: 46px;
             
         }
@@ -292,6 +332,10 @@
 .section__abu {
     padding: 50px 0px;
     background-color: #fff;
+
+    @media screen and (max-width: 480px ) {
+        padding: 0px;
+   }
 
     & .abu{
         margin-top: 50px;

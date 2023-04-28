@@ -44,6 +44,8 @@ const KompDatacard = [
 
     
 
+    
+
  
 ]
 export default KompDatacard
