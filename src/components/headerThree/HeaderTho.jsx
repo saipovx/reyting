@@ -3,42 +3,28 @@ import { HashLink } from 'react-router-hash-link';
 
 import { useState, useEffect } from 'react'
 
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import h from '../header/header.module.scss'
 
 import svg from '../img/logo.png'
-
 import mail from '../img/user_mail.svg'
 import contact from '../img/user_contact.svg'
 import like from '../img/user_like.svg'
 import chat from '../img/user_chat.svg'
 import nast from '../img/user_nast.svg'
 
-function Header () {
+function HeaderThree () {
 
     const [nav, setNav] = useState(false)
-
-    
+  
     const closeSideBar = () => {
         setNav(false)
     }
-    
-    const [UserNav, setUserNav] = useState(false)
-
-    const handleClick = () => {
-        setNav(!nav)
-        setUserNav(false)
-   }
-
-   const TogglehandleClick = () => {
-    setNav(false)
-    setUserNav(!UserNav)
-}
 
     const [Header , setNavbar] = useState (false)
 
     const changeBackground = () => {
-       
+        
 
         if (window.scrollY >= 100) {
 
@@ -49,7 +35,7 @@ function Header () {
           setNavbar(false)
 
         }
-    }
+      }
 
       useEffect(() => {
 
@@ -59,18 +45,30 @@ function Header () {
 
       })
 
-    const scrollWithOffset = (el) => {
+      const scrollWithOffset = (el) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
         const yOffset = -85; 
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
     } 
+
+    const [UserNav, setUserNav] = useState(false)
+
+    const handleClick = () => {
+         setNav(!nav)
+         setUserNav(false)
+    }
+ 
+    const TogglehandleClick = () => {
+     setNav(false)
+     setUserNav(!UserNav)
+    }
+       
       
 
 
     return (
 
         <header className={ Header ? [h.header, h.header_active].join(' ') : [h.header] } >
-
             <div className={h.container}>
                 
         <nav className={h.nav}>
@@ -84,52 +82,46 @@ function Header () {
 
             <p  >
             <HashLink
-                 to="/#onas"
+                 to="/vakan/#vakan"
                  className={h.nav__ul__link} onClick={closeSideBar}
                  scroll={el => scrollWithOffset(el)}
                  >
                     
-                  О нас
+                    Разместить вакансию
             </HashLink>
             </p>
 
             <p>
             <HashLink
-                 to="/#info"
+                 to="/rezume"
                  className={h.nav__ul__link} onClick={closeSideBar}
                  scroll={el => scrollWithOffset(el)}
                  >
                     
-                    Предложения 
+                    Резюме 
             </HashLink>
             </p>
 
             <p>
             <HashLink
-                 to="/#kval"
+                 to="/vakan/#reyting"
                  className={h.nav__ul__link} onClick={closeSideBar}
                  scroll={el => scrollWithOffset(el)}
                  >
                     
-                    Обучение 
+                    Рейтинг работников 
             </HashLink>
             </p>
 
             <p>
             <HashLink
-                 to="/#novos"
+                 to="/vakan/#obuch"
                  className={h.nav__ul__link} onClick={closeSideBar}
                  scroll={el => scrollWithOffset(el)}
                  >
                     
-                    Новости и статьи 
+                    Обучение
             </HashLink>       
-            </p>
-
-            <p >
-                 <HashLink  scroll={el => scrollWithOffset(el)}  to='/#footer' className={h.nav__ul__link}  onClick={closeSideBar}>
-                 Контакты 
-                 </HashLink>
             </p>
 
             </ul>
@@ -200,4 +192,4 @@ function Header () {
 
 }
 
-export default Header
+export default HeaderThree

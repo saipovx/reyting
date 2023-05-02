@@ -7,6 +7,11 @@ import { Link } from 'react-router-dom'
 import h from '../header/header.module.scss'
 
 import svg from '../img/logo.png'
+import mail from '../img/user_mail.svg'
+import contact from '../img/user_contact.svg'
+import like from '../img/user_like.svg'
+import chat from '../img/user_chat.svg'
+import nast from '../img/user_nast.svg'
 
 function HeaderTho () {
 
@@ -45,6 +50,18 @@ function HeaderTho () {
         const yOffset = -85; 
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
     } 
+
+   const [UserNav, setUserNav] = useState(false)
+
+   const handleClick = () => {
+        setNav(!nav)
+        setUserNav(false)
+   }
+
+   const TogglehandleClick = () => {
+    setNav(false)
+    setUserNav(!UserNav)
+   }
       
 
 
@@ -121,11 +138,43 @@ function HeaderTho () {
                 Обратный звонок
                 </Link>
 
-                <div className={h.nav__admin_user}>
+                <div className={h.nav__admin_user} onClick={TogglehandleClick}>
+                    {UserNav ? false : true }
+                     
+              
+                    <div className={ UserNav ? [h.nav__admin_user_info ,h.nav__admin_user_info_active].join(' ') : [h.nav__admin_user_info] } >
+                       
+
+                        <div className={h.user}>
+                            <img src={mail} alt="svg" />
+                            <Link to=''>Чаты</Link>
+                        </div>
+
+                        <div className={h.user}>
+                            <img src={chat} alt="svg" />
+                            <Link to=''>Тарифы</Link>
+                        </div>
+
+                        <div className={h.user}>
+                            <img src={contact} alt="svg" />
+                            <Link to=''>Мои резюме</Link>
+                        </div>
+
+                        <div className={h.user}>
+                            <img src={like} alt="svg" />
+                            <Link to=''>Мои избранные вакансии</Link>
+                        </div>
+
+                        <div className={h.user}>
+                            <img src={nast} alt="svg" />
+                            <Link to=''>Настройки</Link>
+                        </div>
+
+                    </div>
                     
                 </div>
 
-                <div className={h.burger} onClick={() => setNav(!nav)}>
+                <div className={h.burger} onClick={handleClick}>
                         {nav ? false : true }
                         <span></span>
                 </div>

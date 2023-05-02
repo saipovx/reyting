@@ -41,7 +41,7 @@ function Home () {
                         Соискателям
                         </Link>
 
-                        <Link to='/' className={m.home__buttons__link}>
+                        <Link to='/vakan' className={m.home__buttons__link}>
                         Работодателям
                         </Link>
 
