@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
+
 import h from '../header/header.module.scss'
 import m from '../vakan/vakan.module.scss'
 
 
 import Poisk from '../poisk/Poisk';
-import HeaderThree from '../headerThree/HeaderTho';
+import Header from '../header/Header';
 
 import VakanDataCard from './Vakan.data'
 import VakanCard from './VakanCard';
@@ -15,15 +16,44 @@ import VakanCard from './VakanCard';
 
 
 
-function Vakan () {
+
+function Vakan ({auth, setAuth}) {
     return(
 
         <>
+    
 
-    <HeaderThree />
+<Header
+
+link='vakan/#vakan'
+title='Разместить вакансию'
+
+link2='vakan/#poisk' 
+title2='Резюме'
+
+link3='vakan/#reyting' 
+title3='Рейтинг работников'
+
+link4='vakan/#obuch' 
+title4='Обучение'
+
+
+
+myRezume = 'Мои вакансии'
+
+myRezume_link = '/myvakan'
+
+tarif_link= '/tarifvakan'
+
+myLiveVakan = '/myliverezume'
+
+        auth={auth}
+        setAuth={setAuth}
+
+ />
     
     <div className={m.section__rezume} id='vakan'>
-        <div className={h.container}>
+        <div className={m.container}>
             
              <div className={m.rezume}>
 
@@ -32,9 +62,21 @@ function Vakan () {
                     <p className={m.rezume__subtitle}>И находите сотрудников среди тех, кто хочет у вас работать.</p>
 
                         
-                        <Link to='/' className={m.rezume__link}>
+
+
+                        {auth ?
+
+                         <Link to='/addvakan' className={m.rezume__link}>
+                         Разместить
+                         </Link>  
+
+                        :
+
+                        <Link to='/reg' className={m.rezume__link}>
                         Разместить
-                        </Link>
+                        </Link>  
+                        
+                        }
 
             </div> 
 
@@ -76,7 +118,7 @@ function Vakan () {
 
                 <div className={m.obuch__item}>
                     
-                как запретить доступ к страницам реакт если он не авторизован                  <p className={m.obuch__item_text}> <span></span> Повышение квалификации </p>
+                    <p className={m.obuch__item_text}> <span></span> Повышение квалификации </p>
 
                     <p className={m.obuch__item_text}>  <span></span> широкий спектр дисциплин </p>
 
@@ -84,7 +126,7 @@ function Vakan () {
 
                 </div>
 
-                <Link to='/' className={m.obuch__link}>
+                <Link to='https://frantsuz.ru/' className={m.obuch__link}>
                 Подробнее
                 </Link>
 
@@ -92,6 +134,8 @@ function Vakan () {
 
         </div>
     </div>
+
+
         
         </>
 

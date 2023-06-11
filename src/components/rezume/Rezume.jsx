@@ -6,7 +6,7 @@ import m from '../rezume/rezume.module.scss'
 
 
 import Poisk from '../poisk/Poisk';
-import HeaderTho from '../headerTho/HeaderTho';
+import Header from '../header/Header';
 import KompCard from './KompCard';
 import KompDatacard from './Komp.data'
 import Port from '../port/Port';
@@ -16,12 +16,44 @@ import abu from '../img/abu.png'
 
 
 
-function Rezume() {
+function Rezume({auth, setAuth}) {
   return (
 
   <>
 
-  <HeaderTho />
+<Header
+
+link='rezume/#rezume'
+title='Резюме'
+
+link2='rezume/#poisk' 
+title2='Поиск'
+
+link3='rezume/#reyting' 
+title3='Рейтинг'
+
+link4='rezume/#abu' 
+title4='Обучение'
+
+link5='rezume/#port' 
+title5='Партнеры'
+
+
+
+
+
+myRezume = 'Мои резюме'
+
+myRezume_link = '/myrezume'
+
+tarif_link= '/tarifrezume'
+
+myLiveVakan = '/myLiveVakan'
+
+auth={auth}
+setAuth={setAuth}
+
+ />
   
     <div className={m.section__rezume} id='rezume'>
         <div className={h.container}>
@@ -32,10 +64,23 @@ function Rezume() {
 
                     <p className={m.rezume__subtitle}>Работа найдется для каждого.</p>
 
+                
                         
-                        <Link to='/' className={m.rezume__link}>
+                      {auth ?
+
+                        <Link to='/addrezume' className={m.rezume__link}>
                         Разместить
                         </Link>
+                        
+                      :
+
+                      <Link to='/reg' className={m.rezume__link}>
+                      Разместить
+                      </Link>
+                             
+                      }
+
+                        
 
             </div> 
 
@@ -79,7 +124,7 @@ function Rezume() {
           <p className={m.abu__item_subtitle}>Не хватает опыта?</p>
           
           <div className={m.abu__item_buttons}>
-            <Link to=''className={m.abu__item_buttons_link}>Подробнее</Link>
+            <Link to='https://frantsuz.ru/' className={m.abu__item_buttons_link}>Подробнее</Link>
             <img src={ster} className={m.abu__item_buttons_svg} alt="svg" />
           </div>
 

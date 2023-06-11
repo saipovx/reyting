@@ -1,20 +1,35 @@
 import { HashLink } from 'react-router-hash-link';
-
-
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import h from '../header/header.module.scss'
 
 import svg from '../img/logo.png'
 
-import mail from '../img/user_mail.svg'
 import contact from '../img/user_contact.svg'
 import like from '../img/user_like.svg'
 import chat from '../img/user_chat.svg'
 import nast from '../img/user_nast.svg'
+import reg from '../img/reg.svg'
+import log from '../img/log.svg'
 
-function Header () {
+
+
+function Header (
+    
+    {
+     
+     link, title, 
+     link2, title2, 
+     link3, title3,
+     link4, title4,
+     link5, title5,
+     myRezume,myRezume_link,
+     tarif_link,
+     myLiveVakan,mylive,auth, setAuth
+    
+    }) {
 
     const [nav, setNav] = useState(false)
 
@@ -64,6 +79,15 @@ function Header () {
         const yOffset = -85; 
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
     } 
+
+    const location = useLocation();
+
+    const signOut = () => {
+        localStorage.setItem('auth', JSON.stringify(setAuth(false)))
+    }
+
+    // useEffect(() => signOut, [auth])
+    
       
 
 
@@ -84,51 +108,59 @@ function Header () {
 
             <p  >
             <HashLink
-                 to="/#onas"
+
+                 to={`/${link}`}
+                 className={h.nav__ul__link} onClick={closeSideBar}
+                 scroll={el => scrollWithOffset(el)}
+                 >
+
+                   {title}
+                    
+                  
+            </HashLink>
+            </p>
+            <p>
+            <HashLink
+                 to={`/${link2}`}
                  className={h.nav__ul__link} onClick={closeSideBar}
                  scroll={el => scrollWithOffset(el)}
                  >
                     
-                  О нас
+                    {title2} 
             </HashLink>
             </p>
 
             <p>
             <HashLink
-                 to="/#info"
+
+                 to={`/${link3}`}
                  className={h.nav__ul__link} onClick={closeSideBar}
                  scroll={el => scrollWithOffset(el)}
                  >
                     
-                    Предложения 
+                    {title3} 
+
             </HashLink>
             </p>
 
             <p>
             <HashLink
-                 to="/#kval"
-                 className={h.nav__ul__link} onClick={closeSideBar}
-                 scroll={el => scrollWithOffset(el)}
-                 >
-                    
-                    Обучение 
-            </HashLink>
-            </p>
 
-            <p>
-            <HashLink
-                 to="/#novos"
+                 to={`/${link4}`}
+                 
                  className={h.nav__ul__link} onClick={closeSideBar}
                  scroll={el => scrollWithOffset(el)}
                  >
                     
-                    Новости и статьи 
+                    {title4}
             </HashLink>       
             </p>
 
             <p >
-                 <HashLink  scroll={el => scrollWithOffset(el)}  to='/#footer' className={h.nav__ul__link}  onClick={closeSideBar}>
-                 Контакты 
+                 <HashLink  scroll={el => scrollWithOffset(el)}  to={`/${link5}`} className={h.nav__ul__link}  onClick={closeSideBar}>
+
+                 {title5} 
+
                  </HashLink>
             </p>
 
@@ -137,41 +169,115 @@ function Header () {
 
             <div className={h.nav__admin}>
                 
-                <Link to="tel:+79999999999" className={h.nav__admin_button}>
+                <Link to="tel:+79680915552" className={h.nav__admin_button}>
                 Обратный звонок
                 </Link>
 
                 <div className={h.nav__admin_user} onClick={TogglehandleClick}>
+
                     {UserNav ? false : true }
                      
               
                     <div className={ UserNav ? [h.nav__admin_user_info ,h.nav__admin_user_info_active].join(' ') : [h.nav__admin_user_info] } >
-                       
 
-                        <div className={h.user}>
-                            <img src={mail} alt="svg" />
-                            <Link to=''>Чаты</Link>
-                        </div>
+            
 
-                        <div className={h.user}>
-                            <img src={chat} alt="svg" />
-                            <Link to=''>Тарифы</Link>
-                        </div>
+                {location.pathname === '/' ? <> {
 
-                        <div className={h.user}>
-                            <img src={contact} alt="svg" />
-                            <Link to=''>Мои резюме</Link>
-                        </div>
+                    auth ? <>
+                    
+                    <div className={h.user}>
 
-                        <div className={h.user}>
-                            <img src={like} alt="svg" />
-                            <Link to=''>Мои избранные вакансии</Link>
-                        </div>
+                    <img src={nast} alt="svg" />
+                    
+                    <Link to='/' onClick={signOut}>Выход</Link>
 
-                        <div className={h.user}>
-                            <img src={nast} alt="svg" />
-                            <Link to=''>Настройки</Link>
-                        </div>
+                    </div>
+
+                    
+
+                    </>  
+
+                     :
+
+                     <>
+
+<div className={h.user}>
+    <img src={log} alt="svg" />
+    <Link to='/login'>вход</Link>
+</div>
+
+<div className={h.user}>
+    <img src={reg} alt="svg" />
+    <Link to='/reg'>Зарегистрироваться</Link>
+</div>
+    
+</>  
+
+                } </> 
+                
+                :
+                
+                <>{
+                    !!auth ? <>
+ 
+                    
+                    
+                    <div className={h.user}>
+                        <img src={chat} alt="svg" />
+                        <Link to={tarif_link}>Тарифы</Link>
+                    </div>
+                    
+                    <div className={h.user}>
+                        <img src={contact} alt="svg" />
+                        <Link to={myRezume_link}>{myRezume}</Link>
+                    </div>
+                    
+                    <div className={h.user}>
+                        <img src={like} alt="svg" />
+                        <Link to={myLiveVakan}>Мои избранные {mylive}</Link>
+                    </div>
+
+                    {location.pathname === '/vakan'||
+                     location.pathname === '/tarifvakan' ||
+                     location.pathname === '/myliverezume'  ||
+                     location.pathname === '/myvakan' ||
+                     location.pathname === '/oplatavakan' ||
+                     location.pathname === '/successfour' ||
+                     location.pathname === '/vakanuser' ||
+                     location.pathname === '/addvakan' 
+                    ?
+
+                    ''
+                    :
+''
+
+                    }
+                    
+                    
+                                    </> 
+                                    
+                                    : 
+
+
+<>
+
+<div className={h.user}>
+    <img src={log} alt="svg" />
+    <Link to='/login'>вход</Link>
+</div>
+
+<div className={h.user}>
+    <img src={reg} alt="svg" />
+    <Link to='/reg'>Зарегистрироваться</Link>
+</div>
+    
+</> 
+
+
+
+                }</> }  
+
 
                     </div>
                     

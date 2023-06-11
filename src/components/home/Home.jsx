@@ -16,14 +16,64 @@ import Port from '../port/Port'
 
 
 
-
-function Home () {
+function Home ({applicants,employer, auth, setAuth}) {
 
     return (
 
         <>
 
-       <Header />
+       <Header
+
+        link='#onas'
+        title='О нас'
+
+        link2='#info' 
+        title2='Предложения'
+
+        link3='#kval' 
+        title3='Обучение'
+
+        link4='#novos' 
+        title4='Новости и статьи '
+
+        link5='#footer' 
+        title5='Контакты'
+
+        auth={auth}
+        setAuth={setAuth}
+
+
+         />
+
+{/* <>
+ 
+                    
+ <div className={h.user}  >
+     <img src={mail} alt="svg" />
+     <Link to=''>Чаты</Link>
+ </div>
+ 
+ <div className={h.user}>
+     <img src={chat} alt="svg" />
+     <Link to=''>Тарифы</Link>
+ </div>
+ 
+ <div className={h.user}>
+     <img src={contact} alt="svg" />
+     <Link to=''>Мои резюме</Link>
+ </div>
+ 
+ <div className={h.user}>
+     <img src={like} alt="svg" />
+     <Link to=''>Мои избранные вакансии</Link>
+ </div>
+ 
+ <div className={h.user}>
+     <img src={nast} alt="svg" />
+     <Link to='/nast'>Настройки</Link>
+ </div>
+ 
+                 </> */}
         
         <section className={m.section__home}>
             <div className={h.container}>
@@ -37,11 +87,11 @@ function Home () {
 
                     <div className={m.home__buttons}>
                         
-                        <Link to='/rezume' className={m.home__buttons__link}>
+                        <Link to='/rezume' onClick={applicants} className={m.home__buttons__link}>
                         Соискателям
                         </Link>
 
-                        <Link to='/vakan' className={m.home__buttons__link}>
+                        <Link to='/vakan' onClick={employer} className={m.home__buttons__link}>
                         Работодателям
                         </Link>
 

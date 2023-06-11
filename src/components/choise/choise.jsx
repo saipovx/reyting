@@ -51,7 +51,7 @@ function Choise() {
 
                             </ul>
 
-                            <Link to='/' className={c.choise__item_content_button}>
+                            <Link to='/rezume' className={c.choise__item_content_button}>
                                 Подробнее
                             </Link>
 
@@ -98,7 +98,7 @@ function Choise() {
 
                             </ul>
 
-                            <Link to='/' className={c.choise__item_content_button}>
+                            <Link to='/vakan' className={c.choise__item_content_button}>
                                 Подробнее
                             </Link>
 
